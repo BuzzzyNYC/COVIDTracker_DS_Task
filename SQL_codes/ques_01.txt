@@ -30,6 +30,7 @@ substr(cast(timee as string),1,7) as timee
   FROM `gsdemo1.covid_data.covid_table` where sett = 'country' 
 ) a 
 group by unit,timee 
+order by unit, timee
 
 
 Question 1:
@@ -68,7 +69,4 @@ END AS new_deaths_orig ,
   FROM `gsdemo1.covid_data.covid_table` where sett = 'country' 
 ) a 
 group by unit,yr,quarter
-
-
-
-
+order by unit,yer,quarter
