@@ -1,6 +1,5 @@
 a) monthly
 
-
 select 
 unit,
 timee,
@@ -30,8 +29,7 @@ substr(cast(timee as string),1,7) as timee
   FROM `gsdemo1.covid_data.covid_table` where sett = 'country' and unit in (select distinct unit from `gsdemo1.covid_data.covid_table` limit 6)
 ) a 
 group by unit,timee 
-
-
+order by unit,timee
 
 
 
@@ -70,12 +68,12 @@ END AS new_deaths_orig ,
   FROM `gsdemo1.covid_data.covid_table` where sett = 'country' and unit in (select distinct unit from `gsdemo1.covid_data.covid_table` limit 6)
 ) a 
 group by unit,yr,quarter
+order by unit,yr,quarter
 
 
 
 
 a) monthly
-
 
 select 
 unit,
@@ -108,9 +106,7 @@ END AS pop ,
   FROM `gsdemo1.covid_data.covid_table` where sett = 'country' and unit in (select distinct unit from `gsdemo1.covid_data.covid_table` limit 6)
 ) a 
 group by unit,timee,pop 
-
-
-
+orderby unit,timee
 
 
 b)quarterly 
@@ -150,8 +146,7 @@ END AS pop
   FROM `gsdemo1.covid_data.covid_table` where sett = 'country' and unit in (select distinct unit from `gsdemo1.covid_data.covid_table` limit 6)
 ) a 
 group by unit,yr,quarter,pop
-
-
+order by unit,yr,quarter
 
 
 	
