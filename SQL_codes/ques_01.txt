@@ -1,5 +1,5 @@
+Question 1:
 a) monthly
-
 
 select 
 unit,
@@ -32,10 +32,8 @@ substr(cast(timee as string),1,7) as timee
 group by unit,timee 
 
 
-
-
-
-b)quarterly 
+Question 1:
+b) quarterly 
 
 select 
 unit,
