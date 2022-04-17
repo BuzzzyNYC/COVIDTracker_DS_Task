@@ -1,4 +1,4 @@
-# Data Scientist Task Submission by Trang Nguyen
+# Data Scientist Task
 ## Tableau Public Profile: https://public.tableau.com/app/profile/trang.nguyen1280#!/ 
 
 ### Question 1:
