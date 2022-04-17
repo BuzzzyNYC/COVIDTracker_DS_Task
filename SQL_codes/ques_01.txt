@@ -1,0 +1,76 @@
+a) monthly
+
+
+select 
+unit,
+timee,
+sum(cum_tests_orig) as cum_tests_orig,
+sum(new_tests_orig) as new_tests_orig,
+sum(new_cases_orig) as new_cases_orig,
+sum(new_deaths_orig) as new_deaths_orig
+ from (
+select 
+ unit,
+ CASE WHEN cum_tests_orig ='NA' THEN 0
+ELSE CAST(cum_tests_orig AS INT64)
+END AS cum_tests_orig ,
+
+ CASE WHEN new_tests_orig ='NA' THEN 0
+ELSE CAST(new_tests_orig AS INT64)
+END AS new_tests_orig ,
+
+ CASE WHEN new_cases_orig ='NA' THEN 0
+ELSE CAST(new_cases_orig AS INT64)
+END AS new_cases_orig ,
+
+ CASE WHEN new_deaths_orig ='NA' THEN 0
+ELSE CAST(new_deaths_orig AS INT64)
+END AS new_deaths_orig ,
+substr(cast(timee as string),1,7) as timee
+  FROM `gsdemo1.covid_data.covid_table` where sett = 'country' 
+) a 
+group by unit,timee 
+
+
+
+
+
+b)quarterly 
+
+select 
+unit,
+yr,
+quarter,
+sum(cum_tests_orig) as cum_tests_orig,
+sum(new_tests_orig) as new_tests_orig,
+sum(new_cases_orig) as new_cases_orig,
+sum(new_deaths_orig) as new_deaths_orig
+ from (
+select 
+ unit,
+ CASE WHEN cum_tests_orig ='NA' THEN 0
+ELSE CAST(cum_tests_orig AS INT64)
+END AS cum_tests_orig ,
+
+ CASE WHEN new_tests_orig ='NA' THEN 0
+ELSE CAST(new_tests_orig AS INT64)
+END AS new_tests_orig ,
+
+ CASE WHEN new_cases_orig ='NA' THEN 0
+ELSE CAST(new_cases_orig AS INT64)
+END AS new_cases_orig ,
+
+ CASE WHEN new_deaths_orig ='NA' THEN 0
+ELSE CAST(new_deaths_orig AS INT64)
+END AS new_deaths_orig ,
+
+ substr(cast(timee as string),1,4) as yr,
+    extract(quarter from timee) as quarter
+
+  FROM `gsdemo1.covid_data.covid_table` where sett = 'country' 
+) a 
+group by unit,yr,quarter
+
+
+
+

@@ -1,0 +1,81 @@
+a) monthly
+
+
+select 
+unit,
+timee,
+pop,
+avg(cap_new_cases) as cap_new_cases,
+avg(cap_new_deaths) as cap_new_deaths,
+avg(cap_new_tests) as cap_new_tests
+ from (
+select 
+ unit,
+ CASE WHEN cap_new_cases ='NA' THEN 0
+ELSE CAST(cap_new_cases AS BIGNUMERIC)
+END AS cap_new_cases ,
+
+ CASE WHEN cap_new_deaths ='NA' THEN 0
+ELSE CAST(cap_new_deaths AS BIGNUMERIC)
+END AS cap_new_deaths ,
+
+ CASE WHEN cap_new_tests ='NA' THEN 0
+ELSE CAST(cap_new_tests AS BIGNUMERIC)
+END AS cap_new_tests ,
+
+substr(cast(timee as string),1,7) as timee,
+
+ CASE WHEN pop ='NA' THEN 0
+ELSE CAST(pop AS NUMERIC)
+END AS pop ,
+
+  FROM `gsdemo1.covid_data.covid_table` where sett = 'country' 
+) a 
+group by unit,timee,pop 
+
+
+
+
+
+b)quarterly 
+
+select 
+unit,
+yr,
+quarter,
+pop,
+avg(cap_new_cases) as cap_new_cases,
+avg(cap_new_deaths) as cap_new_deaths,
+avg(cap_new_tests) as cap_new_tests
+
+
+ from (
+select 
+ unit,
+ CASE WHEN cap_new_cases ='NA' THEN 0
+ELSE CAST(cap_new_cases AS BIGNUMERIC)
+END AS cap_new_cases ,
+
+ CASE WHEN cap_new_deaths ='NA' THEN 0
+ELSE CAST(cap_new_deaths AS BIGNUMERIC)
+END AS cap_new_deaths ,
+
+ CASE WHEN cap_new_tests ='NA' THEN 0
+ELSE CAST(cap_new_tests AS BIGNUMERIC)
+END AS cap_new_tests ,
+
+
+ substr(cast(timee as string),1,4) as yr,
+    extract(quarter from timee) as quarter,
+	CASE WHEN pop ='NA' THEN 0
+ELSE CAST(pop AS NUMERIC)
+END AS pop 
+
+  FROM `gsdemo1.covid_data.covid_table` where sett = 'country' 
+) a 
+group by unit,yr,quarter,pop
+
+
+
+
+	
