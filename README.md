@@ -21,7 +21,7 @@ b)	Quarterly average testing, case and death rate per capita (per 1000 people) p
 
 Link: https://public.tableau.com/app/profile/trang.nguyen1280/viz/COVIDTracker-QuarterlyAverageTestingCaseandDeathRatepercapitaperCountry/Dashboard4 
 
-### Question 3: Please find the attached .csv files for questions 1,2 with limit 6 countries. Otherwise, the dashboards for questions 1, 2 per month and quarter are filter by country and user can select up to 6 countries.
+### Question 3: Please find the attached .csv files for questions 1,2 with limit 6 countries. Otherwise, the dashboards for questions 1, 2 per month and quarter are filter by country and users can select up to 6 countries.
 
 ### Question 4 & 5: 
 
