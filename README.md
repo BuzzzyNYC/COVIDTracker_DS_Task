@@ -25,5 +25,8 @@ Link: https://public.tableau.com/app/profile/trang.nguyen1280/viz/COVIDTracker-Q
 
 ### Question 4 & 5: 
 
+Monthly metric calculated in questions 1:
 Link:https://public.tableau.com/app/profile/trang.nguyen1280/viz/COVIDTRACKER-MonthlyNewDeathsperCountry/Dashboard5 
-An extra dashboard for monthly metric calculated in question 2: https://public.tableau.com/app/profile/trang.nguyen1280/viz/COVIDTRACKER-MonthlyAverageDeathRateperCountry/Dashboard6
+
+An extra dashboard for monthly metric calculated in question 2: 
+Link: https://public.tableau.com/app/profile/trang.nguyen1280/viz/COVIDTRACKER-MonthlyAverageDeathRateperCountry/Dashboard6
