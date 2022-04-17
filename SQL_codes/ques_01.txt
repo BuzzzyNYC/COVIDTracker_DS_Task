@@ -69,4 +69,4 @@ END AS new_deaths_orig ,
   FROM `gsdemo1.covid_data.covid_table` where sett = 'country' 
 ) a 
 group by unit,yr,quarter
-order by unit,yer,quarter
+order by unit,yr,quarter
