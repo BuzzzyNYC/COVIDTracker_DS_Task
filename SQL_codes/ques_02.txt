@@ -1,5 +1,6 @@
-a) monthly
+Question 2:
 
+a) monthly
 
 select 
 unit,
@@ -32,10 +33,10 @@ END AS pop ,
   FROM `gsdemo1.covid_data.covid_table` where sett = 'country' 
 ) a 
 group by unit,timee,pop 
+order by unit, timee
 
 
-
-
+Question 2:
 
 b)quarterly 
 
@@ -74,8 +75,5 @@ END AS pop
   FROM `gsdemo1.covid_data.covid_table` where sett = 'country' 
 ) a 
 group by unit,yr,quarter,pop
+order by unit,yr,quarter
 
-
-
-
-	
